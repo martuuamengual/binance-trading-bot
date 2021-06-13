@@ -12,6 +12,7 @@
 ---
 
 [![ko](https://img.shields.io/badge/lang-한국어-brightgreen.svg)](https://github.com/chrisleekr/binance-trading-bot/blob/master/README.ko.md)
+[![中文](https://img.shields.io/badge/lang-中文-blue.svg)](https://github.com/chrisleekr/binance-trading-bot/blob/master/README.zh-cn.md)
 
 This is a test project. I am just testing my code.
 
@@ -26,6 +27,10 @@ incurred directly or indirectly by using this code. Read
 **Before updating the bot, make sure to record the last buy price in the note. It may lose the configuration or last buy price records.**
 
 ## Latest changes
+
+### Support manual trade
+
+The bot is now supporting manual trade per symbol. It will automatically re-calculate the last buy price if exists.
 
 ### Support all symbols
 
@@ -61,6 +66,12 @@ At the moment, the bot only supports the market order.
 ### Trailing Buy/Sell Bot
 
 This bot is using the concept of trailing buy/sell order which allows following the price fall/rise.
+
+> Trailing Stop Orders
+> About Trailing Stop Orders Concept you can find at [Binance Official document](https://www.binance.com/en/support/faq/360042299292)
+>
+> TL;DR
+> Place orders at a fixed value or percentage when the price changes. Using this feature you can buy at the lowest possible price when buying down and sell at the highest possible price when selling up.
 
 - The bot can monitor multiple symbols. All symbols will be monitored per second.
 - The bot is using MongoDB to provide a persistence database. However, it does not use the latest MongoDB to support Raspberry Pi 32bit. Used MongoDB version
@@ -284,13 +295,13 @@ Or use the frontend to adjust configurations after launching the application.
 
 ## Screenshots
 
-| Frontend Mobile                                                                                                          | Setting                                                                                                          |
-| ------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------- |
-| ![Frontend Mobile](https://user-images.githubusercontent.com/5715919/116782164-eeb6b880-aaca-11eb-8ad5-ad95e675eed1.png) | ![Setting](https://user-images.githubusercontent.com/5715919/116782053-4a347680-aaca-11eb-9dfd-eb0bfca69381.png) |
+| Frontend Mobile | Setting | Manual Trade |
+| --------------- | ------- | ------------ |
+| ![Frontend Mobile](https://user-images.githubusercontent.com/5715919/120882974-07604400-c61e-11eb-8509-96eaac88231b.png) | ![Setting](https://user-images.githubusercontent.com/5715919/120882990-1810ba00-c61e-11eb-839b-a866fcb355e4.png) | ![Manual Trade](https://user-images.githubusercontent.com/5715919/120883027-41314a80-c61e-11eb-84aa-8b8fc55a4732.png) |
 
 | Frontend Desktop                                                                                                          |
 | ------------------------------------------------------------------------------------------------------------------------- |
-| ![Frontend Desktop](https://user-images.githubusercontent.com/5715919/117468596-2ffe0b00-af98-11eb-99da-db45e8cbdc3c.png) |
+| ![Frontend Desktop](https://user-images.githubusercontent.com/5715919/120882948-e992df00-c61d-11eb-913a-bcb19bbfb5ac.png) |
 
 ### Sample Trade
 
@@ -309,7 +320,7 @@ to view the past changes.
 - [x] Improve frontend & settings UI - [#93](https://github.com/chrisleekr/binance-trading-bot/issues/93) [#85](https://github.com/chrisleekr/binance-trading-bot/issues/85)
 - [x] Support all symbols - [#104](https://github.com/chrisleekr/binance-trading-bot/issues/104)
 - [x] Add stop loss feature - [#99](https://github.com/chrisleekr/binance-trading-bot/issues/99)
-- [ ] Add manual buy/sell feature -[#100](https://github.com/chrisleekr/binance-trading-bot/issues/100)
+- [x] Add manual buy/sell feature -[#100](https://github.com/chrisleekr/binance-trading-bot/issues/100)
 - [ ] Improve sell strategy with conditional stop price percentage based on the profit percentage - [#94](https://github.com/chrisleekr/binance-trading-bot/issues/94)
 - [ ] Add sudden drop buy strategy - [#67](https://github.com/chrisleekr/binance-trading-bot/issues/67)
 - [ ] Support Grid strategy for buy/sell to mitigate loss/increasing profit - [#158](https://github.com/chrisleekr/binance-trading-bot/issues/158)
@@ -340,38 +351,7 @@ to the developer.
 
 ## Contributors
 
-<table>
-<tr>
-    <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
-        <a href=https://github.com/chrisleekr>
-            <img src=https://avatars.githubusercontent.com/u/5715919?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=chrisleekr/>
-            <br />
-            <sub style="font-size:14px"><b>chrisleekr</b></sub>
-        </a>
-    </td>
-    <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
-        <a href=https://github.com/romualdr>
-            <img src=https://avatars.githubusercontent.com/u/5497356?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Romuald R./>
-            <br />
-            <sub style="font-size:14px"><b>Romuald R.</b></sub>
-        </a>
-    </td>
-    <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
-        <a href=https://github.com/hipposen>
-            <img src=https://avatars.githubusercontent.com/u/10888467?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=hipposen/>
-            <br />
-            <sub style="font-size:14px"><b>hipposen</b></sub>
-        </a>
-    </td>
-    <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
-        <a href=https://github.com/thamlth>
-            <img src=https://avatars.githubusercontent.com/u/45093611?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=thamlth/>
-            <br />
-            <sub style="font-size:14px"><b>thamlth</b></sub>
-        </a>
-    </td>
-</tr>
-</table>
+Thanks to all contributors :heart: [Click to see our heroes](https://github.com/chrisleekr/binance-trading-bot/graphs/contributors)
 
 ## Disclaimer
 
